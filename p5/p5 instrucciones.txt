@@ -1,0 +1,8 @@
+v -> longitud vehiculo
+
+S(i) es la suma agregada de los i vehículos 
+L es la longitud del barco 
+
+si p + v <= L -> babor DP [i][p+vi]
+
+si S-p <= L -> estribor DP[i][p]	
