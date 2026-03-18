@@ -2,8 +2,6 @@ package algstudent.s4;
 
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
-import java.text.ParseException;
 import java.util.*;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -26,7 +24,7 @@ public class Devorador {
 			} else {
 				System.out.println("No se encontró solución.");
 			}
-		} catch (IOException | ParseException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
