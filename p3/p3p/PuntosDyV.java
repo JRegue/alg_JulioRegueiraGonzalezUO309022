@@ -30,7 +30,11 @@ public class PuntosDyV {
         p2MinGlobal = null;
 
         double[][] puntosX = puntos.clone();
-        Arrays.sort(puntosX, Comparator.comparingDouble(a -> a[0]));
+        Arrays.sort(puntosX, new Comparator<double[]>() {
+            public int compare(double[] a, double[] b) {
+                return Double.compare(a[0], b[0]);
+            }
+        });
         
         recursivoDyV(puntosX, 0, puntosX.length - 1);
     }
@@ -59,7 +63,11 @@ public class PuntosDyV {
         }
 
         double[][] franjaValida = Arrays.copyOf(franja, j);
-        Arrays.sort(franjaValida, Comparator.comparingDouble(a -> a[1]));
+        Arrays.sort(franjaValida, new Comparator<double[]>() {
+            public int compare(double[] a, double[] b) {
+                return Double.compare(a[1], b[1]);
+            }
+        });
 
         for (int i = 0; i < j; i++) {
             for (int k = i + 1; k < j && (franjaValida[k][1] - franjaValida[i][1]) < minLocal; k++) {
